@@ -230,7 +230,7 @@ local function make_recipe(input)
     local recipe = {
         name = recipe_template.name or input.name,
         type = "recipe",
-        category = recipe_template.crafting_category,
+        categories = {recipe_template.crafting_category or "crafting"},
         surface_conditions = recipe_template.surface_conditions or nil,
         order = input.order or string.format("d[loader]-a%02d[%s]", input.last_index, input.name),
         localised_name = input.localised_name
